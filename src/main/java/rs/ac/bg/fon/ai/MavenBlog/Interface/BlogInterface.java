@@ -7,5 +7,7 @@ public interface BlogInterface {
 	public void dodajPost (Post post);
 	
 	public void obrisiPost (Post post);
+	
+	
 
 }
