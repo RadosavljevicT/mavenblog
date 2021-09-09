@@ -2,6 +2,8 @@ package rs.ac.bg.fon.ai.MavenBlog.Post;
 
 import java.util.Arrays;
 
+import rs.ac.bg.fon.ai.MavenBlog.Autor.Autor;
+
 public class Post {
 
 	

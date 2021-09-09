@@ -1,4 +1,4 @@
-package rs.ac.bg.fon.ai.MavenBlog.Post;
+package rs.ac.bg.fon.ai.MavenBlog.Autor;
 
 public class Autor {
 
