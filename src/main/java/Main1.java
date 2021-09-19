@@ -17,9 +17,11 @@ import com.github.scribejava.core.model.Verb;
 import com.github.scribejava.core.oauth.OAuth10aService;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.tumblr.jumblr.JumblrClient;
 
 public class Main1 {
-
+	
+	private static final String body = "hajde da probamo da objavimo tekst.";
 	private static final String PROTECTED_RESOURCE_URL = "http://api.tumblr.com/v2/blog/student-engineer.tumblr.com/followers";
 	
 	public static void main(String[] args) throws IOException, InterruptedException, ExecutionException  {
@@ -61,6 +63,9 @@ public class Main1 {
         System.out.println("Now we're going to access a protected resource...");
         final OAuthRequest request = new OAuthRequest(Verb.GET, PROTECTED_RESOURCE_URL);
         service.signRequest(accessToken, request);
+        
+        		
+        //client.postCreate("", null)
         try (Response response = service.execute(request)) {
             System.out.println("Got it! Lets see what we found...");
             System.out.println();
