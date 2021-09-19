@@ -11,6 +11,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.tumblr.jumblr.JumblrClient;
 import com.tumblr.jumblr.types.Blog;
+import com.tumblr.jumblr.types.Post;
 import com.tumblr.jumblr.types.TextPost;
 import com.tumblr.jumblr.types.User;
 
@@ -47,9 +48,15 @@ public class Main {
 		
 
 		// Make the request
+		TextPost post1;
+		long num = 662786408964046848L;
+		TextPost post =  (TextPost)client.blogPost("student-engineer.tumblr.com", num);
 		
-		long num = 662791667189006336L;
-		client.postDelete("student-engineer.tumblr.com",num);
+		//post1 = (TextPost) post;
+		
+		post.setBody("Pokusavamo da izmenimo blog post");
+		post.setTitle("Izmena1");
+		post.save();
 	}
 
 }
