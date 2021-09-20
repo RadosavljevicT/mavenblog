@@ -4,6 +4,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,6 +15,8 @@ import com.tumblr.jumblr.types.Blog;
 import com.tumblr.jumblr.types.Post;
 import com.tumblr.jumblr.types.TextPost;
 import com.tumblr.jumblr.types.User;
+
+import rs.ac.bg.fon.ai.MavenBlog.Post.Pratioci;
 
 public class Main {
 
@@ -48,15 +51,19 @@ public class Main {
 		
 
 		// Make the request
-		TextPost post1;
-		long num = 662786408964046848L;
-		TextPost post =  (TextPost)client.blogPost("student-engineer.tumblr.com", num);
+		List <User> users =client.blogFollowers("student-engineer");
+		Pratioci[] pratioci = new Pratioci[100];
 		
-		//post1 = (TextPost) post;
+		for(int i =0; i< users.size(); i++) {
+			
+			System.out.println(users.get(i).getName());
+			
+			String ime = users.get(i).getName();
+			int broj = ++i;
+			pratioci[i] =new Pratioci(broj,ime);
+			
+			
+			System.out.println(pratioci[i].getBrojPratioca()+"." + pratioci[i].getIme());}
+	
 		
-		post.setBody("Pokusavamo da izmenimo blog post");
-		post.setTitle("Izmena1");
-		post.save();
-	}
-
-}
+	}}
