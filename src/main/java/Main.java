@@ -16,6 +16,7 @@ import com.tumblr.jumblr.types.Post;
 import com.tumblr.jumblr.types.TextPost;
 import com.tumblr.jumblr.types.User;
 
+import rs.ac.bg.fon.ai.MavenBlog.Post.*;
 import rs.ac.bg.fon.ai.MavenBlog.Post.Pratioci;
 
 public class Main {
@@ -23,14 +24,14 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		
 		//Authenticate via OAuth
-		JumblrClient client = new JumblrClient(
+		/*JumblrClient client = new JumblrClient(
 		  "QcfVaxZBTRF4Z0e03I8pTRAPV4OLmxnzWVtyZff2R5azVBhpKl",
 		  "TKDxnP0l1JgGP6eOKmeUGzSu6v8Mow5siUpoYyeoMdkJsZpSVG"
 		);
 		client.setToken(
 		  "Z1WRBy57YUtf1S6JsOGhERZn7lfPjquiFmXcRJVvYfDW4o9P6r",
 		  "XXyP03ryxjCHomA1Qi5cRzCDMnZyoPr4ZbxBdpWSloJTD7sWxG"
-		);
+		);*/
 
 		// Make the request
 	/*	List<User> blogs = client.blogFollowers("student-engineer.tumblr.com");
@@ -40,30 +41,30 @@ public class Main {
 		
 
 		// Authenticate via OAuth
-		/*JumblrClient client = new JumblrClient(
+		JumblrClient client = new JumblrClient(
 		  "QcfVaxZBTRF4Z0e03I8pTRAPV4OLmxnzWVtyZff2R5azVBhpKl",
 		  "TKDxnP0l1JgGP6eOKmeUGzSu6v8Mow5siUpoYyeoMdkJsZpSVG"
 		);
 		client.setToken(
 		  "Z1WRBy57YUtf1S6JsOGhERZn7lfPjquiFmXcRJVvYfDW4o9P6r",
 		  "XXyP03ryxjCHomA1Qi5cRzCDMnZyoPr4ZbxBdpWSloJTD7sWxG"
-		);*/
+		);
 		
 
 		// Make the request
-		List <User> users =client.blogFollowers("student-engineer");
-		Pratioci[] pratioci = new Pratioci[100];
-		
-		for(int i =0; i< users.size(); i++) {
-			
-			System.out.println(users.get(i).getName());
-			
-			String ime = users.get(i).getName();
-			int broj = ++i;
-			pratioci[i] =new Pratioci(broj,ime);
-			
-			
-			System.out.println(pratioci[i].getBrojPratioca()+"." + pratioci[i].getIme());}
 	
+	
+
+		// Make the request
+		BlogInf binf = new BlogInf();
+		Blog blog = client.blogInfo("student-engineer.tumblr.com");
+		User user = client.user();
 		
+		binf.setNaslovBloga(blog.getTitle());
+		binf.setUkupanBrojObjava(blog.getPostCount());
+		binf.setNazivBloga(blog.getName());
+		binf.setOpisBloga(blog.getDescription());
+		binf.setFollowings(user.getFollowingCount());
+		 String s =binf.toString();
+		 System.out.println(s);
 	}}
