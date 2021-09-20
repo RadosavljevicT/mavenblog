@@ -3,7 +3,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
 
@@ -16,8 +20,11 @@ import com.github.scribejava.core.model.Response;
 import com.github.scribejava.core.model.Verb;
 import com.github.scribejava.core.oauth.OAuth10aService;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.tumblr.jumblr.JumblrClient;
+
+import rs.ac.bg.fon.ai.MavenBlog.Prevodilac.StraniJezik;
 
 public class Main1 {
 	
@@ -29,7 +36,7 @@ public class Main1 {
 	
 	
 		
-		final OAuth10aService service = new ServiceBuilder("QcfVaxZBTRF4Z0e03I8pTRAPV4OLmxnzWVtyZff2R5azVBhpKl")
+	final OAuth10aService service = new ServiceBuilder("QcfVaxZBTRF4Z0e03I8pTRAPV4OLmxnzWVtyZff2R5azVBhpKl")
                 .apiSecret("TKDxnP0l1JgGP6eOKmeUGzSu6v8Mow5siUpoYyeoMdkJsZpSVG")
                 // OOB forbidden. We need an url and the better is on the tumblr website !
                 .callback("http://www.tumblr.com/connect/login_success.html")
@@ -75,5 +82,6 @@ public class Main1 {
         System.out.println("Thats it man! Go and build something awesome with Scribe! :)");
 
 	}
-
-}
+		
+		
+	}
