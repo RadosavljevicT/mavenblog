@@ -1,31 +1,30 @@
 package rs.ac.bg.fon.ai.MavenBlog.Post;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+
 public class Citati {
 	
-	int brojCitata;
-	String kategorija;
+	String imeAutora;
+	String citat;
+	public String getImeAutora() {
+		return imeAutora;
+	}
+	public void setImeAutora(String imeAutora) {
+		this.imeAutora = imeAutora;
+	}
+	public String getCitat() {
+		return citat;
+	}
+	public void setCitat(String citat) {
+		this.citat = citat;
+	}
+	@Override
+	public String toString() {
+		return imeAutora + ": " +citat;
+	}
 	
 	
-	public int getBrojCitata() {
-		return brojCitata;
-	}
-	public void setBrojCitata(int brojCitata) {
-		
-		if (brojCitata <0 || brojCitata>10)
-			throw new RuntimeException("Broj citata mora biti izmedju 0 i 10");
-		
-		this.brojCitata = brojCitata;
-	}
-	public String getKategorija() {
-		return kategorija;
-	}
-	public void setKategorija(String kategorija) {
-		
-		if (kategorija == null)
-			throw new NullPointerException("Kategorija ne sme biti null");
-		
-		this.kategorija = kategorija;
-	}
 	
 	
 
