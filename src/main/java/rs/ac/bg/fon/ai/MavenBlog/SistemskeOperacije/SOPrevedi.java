@@ -27,8 +27,13 @@ public static void prevedi() throws Exception, InterruptedException {
 	Scanner sc2 = new Scanner(System.in);
 	System.out.println("Unesite tekst:");
 	straniJezik.setTekst(sc2.nextLine());
+	if (straniJezik.getIzvorniJezik() == null || straniJezik.getStraniJezik()== null || straniJezik.getTekst() ==null)
+		throw new NullPointerException("Izvorni jezik, strani jezik i tekst ne smeju biti null!");
 	
-	String tekst = straniJezik.toString();
+	
+	else {
+		String tekst = straniJezik.toString();
+	
 
 HttpRequest request = HttpRequest.newBuilder()
 		.uri(URI.create("https://google-translate1.p.rapidapi.com/language/translate/v2"))
@@ -47,16 +52,17 @@ JsonObject r = gson.fromJson(response.body(), JsonObject.class);
 
 JsonArray terms = r.getAsJsonObject("data").getAsJsonArray("translations");
 JsonObject translations = terms.get(0).getAsJsonObject();
-	    String result = translations.get("translatedText").toString();
- 
-        
-   
 
-System.out.println(result);
+if (translations == null)
+	throw new NullPointerException("Neuspesan zahtev za prevodjenje!");
+
+else
+{	    String result = translations.get("translatedText").toString();
+	    System.out.println(result);}
 
 
 	
 	}
 	
-	
+}
 }

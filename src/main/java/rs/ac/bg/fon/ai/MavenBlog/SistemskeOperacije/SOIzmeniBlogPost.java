@@ -12,14 +12,19 @@ public static void izmeniBlogPost(String s1, String s2, String naslov, String te
 			  "TKDxnP0l1JgGP6eOKmeUGzSu6v8Mow5siUpoYyeoMdkJsZpSVG"
 			);
 			
+	 if (s1 ==null || s2 == null)
+		 throw new NullPointerException ("Tokeni ne smeju biti null!");
 	 
+	 else {
 			client.setToken(s1,s2);
 	TextPost post =  (TextPost)client.blogPost("student-engineer.tumblr.com", postId);
 			
 	post.setBody(tekst);
 	post.setTitle(naslov);
 	post.save();
+	
+	System.out.println("Uspesno ste izmenili objavu!");
 	}
 	
-	
+}
 }

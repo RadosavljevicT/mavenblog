@@ -17,18 +17,22 @@ public static void postaviBlogPost(String s1, String s2, String tekst) throws Ex
 			  "TKDxnP0l1JgGP6eOKmeUGzSu6v8Mow5siUpoYyeoMdkJsZpSVG"
 			);
 			
-	 
-			client.setToken(s1,s2);
+	if (s1 ==null || s2 == null)
+		 throw new NullPointerException ("Tokeni ne smeju biti null!");
+			
+	else {
+	client.setToken(s1,s2);
 
 
-	// Make the request
+
 	TextPost post = client.newPost("student-engineer.tumblr.com", TextPost.class);
 	post.setBody(tekst);
 	post.save();
 	
+	System.out.println("Uspesno ste objavili objavu!");
 		
 	}
 	
-	
+}
 	
 }

@@ -33,11 +33,15 @@ public class SOVratiCitat {
 		
 		JsonObject c = r.get(0).getAsJsonObject();
 		
+		if (c.get("quote").getAsString() == null || c.get("author").getAsString() == null)
+			throw new NullPointerException ("Neispravan zahtev za dobijanje citata!");
+		
+		else {
 		citat.setCitat(c.get("quote").getAsString());
 		
 		citat.setImeAutora(c.get("author").getAsString());
 		
 		citat.prikazi();
-		
+		}
 	}
 }

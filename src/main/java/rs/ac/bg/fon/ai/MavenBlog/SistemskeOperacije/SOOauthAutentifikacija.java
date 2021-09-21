@@ -24,6 +24,9 @@ public class SOOauthAutentifikacija {
 				 
 		        String s2 = in2.nextLine();
 		 
+		        if (s1 ==null || s2 == null)
+		   		 throw new NullPointerException ("Tokeni ne smeju biti null!");
+		        else
 				client.setToken(s1,s2);
 
 		

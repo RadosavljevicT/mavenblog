@@ -37,11 +37,14 @@ public class SOVratiPratioce {
 				  "TKDxnP0l1JgGP6eOKmeUGzSu6v8Mow5siUpoYyeoMdkJsZpSVG"
 				);
 				
-		 
+		if (s1 ==null || s2 == null)
+			 throw new NullPointerException ("Tokeni ne smeju biti null!");
+		
+		else {
 				client.setToken(s1,s2);
 		
 		List <User> users =client.blogFollowers("student-engineer");
-		Pratioci[] pratioci = new Pratioci[100];
+		Pratioci[] pratioci = new Pratioci[5000];
 		
 		for(int i =0; i< users.size(); i++) {
 			
@@ -55,6 +58,6 @@ public class SOVratiPratioce {
 	
 
 }
-	
+	}
 }
 

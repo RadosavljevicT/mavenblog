@@ -16,6 +16,10 @@ public class SOVratiInformacijeOBlogu {
 				);
 				
 		 
+		if (s1 ==null || s2 == null)
+			 throw new NullPointerException ("Tokeni ne smeju biti null!");
+			
+		else {
 				client.setToken(s1,s2);
 		
 		BlogInf binf = new BlogInf();
@@ -29,7 +33,7 @@ public class SOVratiInformacijeOBlogu {
 		binf.setFollowings(user.getFollowingCount());
 		binf.prikazi();
 		
-		
+		}
 		
 	}
 	
