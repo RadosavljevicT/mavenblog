@@ -15,7 +15,7 @@ import rs.ac.bg.fon.ai.MavenBlog.Prevodilac.StraniJezik;
 
 public class SOPrevedi {
 
-public static void prevedi() throws Exception, InterruptedException {
+public static String prevedi() throws Exception, InterruptedException {
 		
 	StraniJezik straniJezik = new StraniJezik();
 	Scanner sc= new Scanner(System.in);
@@ -31,7 +31,7 @@ public static void prevedi() throws Exception, InterruptedException {
 		throw new NullPointerException("Izvorni jezik, strani jezik i tekst ne smeju biti null!");
 	
 	
-	else {
+	
 		String tekst = straniJezik.toString();
 	
 
@@ -56,13 +56,12 @@ JsonObject translations = terms.get(0).getAsJsonObject();
 if (translations == null)
 	throw new NullPointerException("Neuspesan zahtev za prevodjenje!");
 
-else
-{	    String result = translations.get("translatedText").toString();
-	    System.out.println(result);}
+	    String result = translations.get("translatedText").toString();
+	    System.out.println(result);
 
 
 	
-	}
-	
+              return "Uspesno ste preveli!";
 }
+
 }

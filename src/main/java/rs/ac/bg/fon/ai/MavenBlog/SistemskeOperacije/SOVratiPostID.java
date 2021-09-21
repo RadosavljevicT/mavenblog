@@ -8,11 +8,11 @@ public class SOVratiPostID {
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Unesite ID objave: ");
-		
-		if (sc.nextLong() <0)
+		long num = sc.nextLong();
+		if (num <0)
 			throw new RuntimeException("Niste dobro uneli ID objave!");
 		
-		long num = sc.nextLong();
+		
 		
 		return num;
 		

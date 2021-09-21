@@ -13,7 +13,7 @@ public class Recnik {
 		if (rec == null)
 			throw new NullPointerException ("Rec ne sme biti null");
 		
-		this.rec = rec;
+		this.rec = rec; 
 	}
 	
 	

@@ -15,7 +15,7 @@ import rs.ac.bg.fon.ai.MavenBlog.Post.Citati;
 public class SOVratiCitat {
 
 	
-	public static void vratiCitat() throws Exception, Throwable {
+	public static String vratiCitat() throws Exception, Throwable {
 		
 		Citati citat = new Citati();
 		HttpRequest request = HttpRequest.newBuilder()
@@ -36,12 +36,13 @@ public class SOVratiCitat {
 		if (c.get("quote").getAsString() == null || c.get("author").getAsString() == null)
 			throw new NullPointerException ("Neispravan zahtev za dobijanje citata!");
 		
-		else {
+		
 		citat.setCitat(c.get("quote").getAsString());
 		
 		citat.setImeAutora(c.get("author").getAsString());
 		
 		citat.prikazi();
-		}
+		
+		return "Uspesno ste dobili citat!";
 	}
 }

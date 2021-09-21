@@ -9,7 +9,7 @@ import rs.ac.bg.fon.ai.MavenBlog.Post.BlogInf;
 public class SOVratiInformacijeOBlogu {
 
 	
-	public static void vratiInformacijeOBlogu(String s1, String s2) throws Exception {
+	public static String vratiInformacijeOBlogu(String s1, String s2) throws Exception {
 		JumblrClient client = new JumblrClient(
 				  "QcfVaxZBTRF4Z0e03I8pTRAPV4OLmxnzWVtyZff2R5azVBhpKl",
 				  "TKDxnP0l1JgGP6eOKmeUGzSu6v8Mow5siUpoYyeoMdkJsZpSVG"
@@ -19,7 +19,7 @@ public class SOVratiInformacijeOBlogu {
 		if (s1 ==null || s2 == null)
 			 throw new NullPointerException ("Tokeni ne smeju biti null!");
 			
-		else {
+		
 				client.setToken(s1,s2);
 		
 		BlogInf binf = new BlogInf();
@@ -33,8 +33,8 @@ public class SOVratiInformacijeOBlogu {
 		binf.setFollowings(user.getFollowingCount());
 		binf.prikazi();
 		
-		}
 		
+		return "Uspesno ste vratili informacije o blogu!";
 	}
 	
 }

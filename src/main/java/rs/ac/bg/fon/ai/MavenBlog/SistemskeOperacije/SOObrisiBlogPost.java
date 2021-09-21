@@ -4,7 +4,7 @@ import com.tumblr.jumblr.JumblrClient;
 
 public class SOObrisiBlogPost {
 
-public static void obrisiBlogPost(String s1, String s2, long postId) {
+public static String obrisiBlogPost(String s1, String s2, long postId) {
 	
 	JumblrClient client = new JumblrClient(
 			  "QcfVaxZBTRF4Z0e03I8pTRAPV4OLmxnzWVtyZff2R5azVBhpKl",
@@ -14,13 +14,15 @@ public static void obrisiBlogPost(String s1, String s2, long postId) {
 	if (s1 ==null || s2 == null)
 		 throw new NullPointerException ("Tokeni ne smeju biti null!"); 
 	
-	else 
-		{client.setToken(s1,s2);
+	
+	client.setToken(s1,s2);
 			
 			client.postDelete("student-engineer.tumblr.com",postId);
 		
 			System.out.println("Uspesno ste obrisali objavu!");
-	}
+			
+			return "Uspesno ste obrisali objavu!";
+	
 	
 }
 }

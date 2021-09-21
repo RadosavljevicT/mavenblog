@@ -10,7 +10,7 @@ public class SOPostaviBlogPost {
 	
 	
 	
-public static void postaviBlogPost(String s1, String s2, String tekst, String naslov) throws Exception, InstantiationException {
+public static String postaviBlogPost(String s1, String s2, String tekst, String naslov) throws Exception, InstantiationException {
 
 	JumblrClient client = new JumblrClient(
 			  "QcfVaxZBTRF4Z0e03I8pTRAPV4OLmxnzWVtyZff2R5azVBhpKl",
@@ -20,7 +20,7 @@ public static void postaviBlogPost(String s1, String s2, String tekst, String na
 	if (s1 ==null || s2 == null || tekst == null || naslov == null)
 		 throw new NullPointerException ("Tokeni ne smeju biti null!");
 			
-	else {
+
 	client.setToken(s1,s2);
 
 
@@ -32,7 +32,7 @@ public static void postaviBlogPost(String s1, String s2, String tekst, String na
 	
 	System.out.println("Uspesno ste objavili objavu!");
 		
-	}
+	return "Uspesno ste objavili objavu!";
 	
 }
 	

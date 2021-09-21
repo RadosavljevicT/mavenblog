@@ -30,7 +30,7 @@ public class SOVratiPratioce {
 
 	 
 	 
-	public static void vratiPratioce(String s1, String s2) {
+	public static String vratiPratioce(String s1, String s2) {
 		
 		JumblrClient client = new JumblrClient(
 				  "QcfVaxZBTRF4Z0e03I8pTRAPV4OLmxnzWVtyZff2R5azVBhpKl",
@@ -40,8 +40,7 @@ public class SOVratiPratioce {
 		if (s1 ==null || s2 == null)
 			 throw new NullPointerException ("Tokeni ne smeju biti null!");
 		
-		else {
-				client.setToken(s1,s2);
+		client.setToken(s1,s2);
 		
 		List <User> users =client.blogFollowers("student-engineer");
 		Pratioci[] pratioci = new Pratioci[5000];
@@ -56,8 +55,8 @@ public class SOVratiPratioce {
 			
 			System.out.println(pratioci[i].getBrojPratioca()+"." + pratioci[i].getIme());}
 	
+return "Uspesno ste vratili pratioce!";
 
-}
 	}
 }
 

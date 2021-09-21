@@ -10,10 +10,10 @@ public class SOVratiTekst {
 		
 		Scanner sc= new Scanner(System.in); 
 		System.out.print("Unesite tekst: ");
-		
-		if ( sc.nextLine()==null)
+		String str= sc.nextLine();
+		if ( str==null)
 			throw new NullPointerException("Niste dobro uneli tekst!");
-		String str= sc.nextLine(); 
+		 
 		
 		return str;
 	}
