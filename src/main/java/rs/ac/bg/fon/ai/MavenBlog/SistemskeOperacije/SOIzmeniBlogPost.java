@@ -12,7 +12,7 @@ public static void izmeniBlogPost(String s1, String s2, String naslov, String te
 			  "TKDxnP0l1JgGP6eOKmeUGzSu6v8Mow5siUpoYyeoMdkJsZpSVG"
 			);
 			
-	 if (s1 ==null || s2 == null)
+	 if (s1 ==null || s2 == null || tekst == null || naslov==null)
 		 throw new NullPointerException ("Tokeni ne smeju biti null!");
 	 
 	 else {

@@ -6,8 +6,18 @@ public class Sadrzaj implements BlogInterface {
 	
 	String naslov;
 	String tekst;
+	long postId;
 	
 	
+	public long getPostId() {
+		return postId;
+	}
+	public void setPostId(long postId) {
+		
+		if (postId<0)
+			throw new RuntimeException("Nije dobro unet id objave!");
+		this.postId = postId;
+	}
 	public String getNaslov() {
 		return naslov;
 	}

@@ -10,14 +10,14 @@ public class SOPostaviBlogPost {
 	
 	
 	
-public static void postaviBlogPost(String s1, String s2, String tekst) throws Exception, InstantiationException {
+public static void postaviBlogPost(String s1, String s2, String tekst, String naslov) throws Exception, InstantiationException {
 
 	JumblrClient client = new JumblrClient(
 			  "QcfVaxZBTRF4Z0e03I8pTRAPV4OLmxnzWVtyZff2R5azVBhpKl",
 			  "TKDxnP0l1JgGP6eOKmeUGzSu6v8Mow5siUpoYyeoMdkJsZpSVG"
 			);
 			
-	if (s1 ==null || s2 == null)
+	if (s1 ==null || s2 == null || tekst == null || naslov == null)
 		 throw new NullPointerException ("Tokeni ne smeju biti null!");
 			
 	else {
@@ -27,6 +27,7 @@ public static void postaviBlogPost(String s1, String s2, String tekst) throws Ex
 
 	TextPost post = client.newPost("student-engineer.tumblr.com", TextPost.class);
 	post.setBody(tekst);
+	post.setTitle(naslov);
 	post.save();
 	
 	System.out.println("Uspesno ste objavili objavu!");
