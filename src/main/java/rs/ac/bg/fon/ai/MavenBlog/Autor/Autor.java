@@ -1,9 +1,12 @@
 package rs.ac.bg.fon.ai.MavenBlog.Autor;
 
-public class Autor {
+import rs.ac.bg.fon.ai.MavenBlog.Interface.BlogInterface;
+
+public class Autor implements BlogInterface {
 
 	String ime;
 	String prezime;
+	
 	
 	
 	public String getIme() {
@@ -27,6 +30,12 @@ public class Autor {
 			throw new NullPointerException("Prezime ne sme biti null");
 		
 		this.prezime = prezime;
+	}
+	@Override
+	public void prikazi() {
+		
+		System.out.println("Prezime: " +prezime + "\nIme: " +ime);
+		
 	}
 	
 	

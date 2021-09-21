@@ -14,7 +14,7 @@ public class StraniJezik {
 	public void setIzvorniJezik(String izvorniJezik) {
 		
 		if (izvorniJezik == null)
-			throw new NullPointerException("Naslov ne sme biti null");
+			throw new NullPointerException("Izvorni jezik ne sme biti null");
 		this.izvorniJezik = izvorniJezik;
 	}
 	public String getStraniJezik() {
@@ -22,13 +22,16 @@ public class StraniJezik {
 	}
 	public void setStraniJezik(String straniJezik) {
 		if (straniJezik == null)
-			throw new NullPointerException("Naslov ne sme biti null");
+			throw new NullPointerException("Strani jezik ne sme biti null");
 		this.straniJezik = straniJezik;
 	}
 	public String getTekst() {
 		return tekst;
 	}
 	public void setTekst(String tekst) {
+		
+		if (tekst == null)
+			throw new NullPointerException("Tekst za prevodjenje ne sme biti null!");
 		this.tekst = tekst;
 	}
 	@Override

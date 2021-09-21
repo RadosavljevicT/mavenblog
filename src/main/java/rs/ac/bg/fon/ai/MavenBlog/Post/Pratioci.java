@@ -17,6 +17,9 @@ public class Pratioci {
 		return brojPratioca;
 	}
 	public void setBrojPratioca(int brojPratioca) {
+		
+		if (brojPratioca <0)
+			throw new RuntimeException("Broj pratioca ne moze biti ispod 0!");
 		this.brojPratioca = brojPratioca;
 	}
 	
@@ -24,6 +27,9 @@ public class Pratioci {
 		return ime;
 	}
 	public void setIme(String ime) {
+		
+		if (ime ==null)
+			throw new NullPointerException("Ime pratioca ne moze biti null!");
 		this.ime = ime;
 	}
 	

@@ -9,16 +9,24 @@ public class Citati implements BlogInterface {
 	
 	String imeAutora;
 	String citat;
+	
 	public String getImeAutora() {
 		return imeAutora;
 	}
 	public void setImeAutora(String imeAutora) {
+		if (imeAutora == null)
+			throw new NullPointerException ("Ime autora bloga ne sme biti null!");
+		
 		this.imeAutora = imeAutora;
 	}
 	public String getCitat() {
 		return citat;
 	}
 	public void setCitat(String citat) {
+		
+		if (citat == null)
+		throw new NullPointerException ("Citat ne sme biti null!");
+		
 		this.citat = citat;
 	}
 	

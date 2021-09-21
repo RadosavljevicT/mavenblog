@@ -16,24 +16,35 @@ public class BlogInf implements BlogInterface  {
 		return nazivBloga;
 	}
 	public void setNazivBloga(String nazivBloga) {
+		
+		if (nazivBloga ==null)
+			throw new NullPointerException("Naziv bloga ne sme biti null");
 		this.nazivBloga = nazivBloga;
 	}
 	public String getNaslovBloga() {
 		return naslovBloga;
 	}
 	public void setNaslovBloga(String naslovBloga) {
+		if (naslovBloga ==null)
+			throw new NullPointerException("Naslov ne sme biti null");
 		this.naslovBloga = naslovBloga;
 	}
 	public int getUkupanBrojObjava() {
 		return ukupanBrojObjava;
 	}
 	public void setUkupanBrojObjava(int ukupanBrojObjava) {
+		
+		if (ukupanBrojObjava<0)
+			throw new RuntimeException ("Ukupan broj objava ne moze biti manji od 0!");
 		this.ukupanBrojObjava = ukupanBrojObjava;
 	}
 	public String getOpisBloga() {
 		return opisBloga;
 	}
 	public void setOpisBloga(String opisBloga) {
+		if (opisBloga ==null)
+			throw new NullPointerException("Opis bloga ne sme biti null!");
+		
 		this.opisBloga = opisBloga;
 	}
 
@@ -41,6 +52,9 @@ public class BlogInf implements BlogInterface  {
 		return followings;
 	}
 	public void setFollowings(int followings) {
+		if(followings <0)
+			throw new RuntimeException ("Broj ljudi koji prate blog ne moze biti manji od 0!");
+		
 		this.followings = followings;
 	}
 	
