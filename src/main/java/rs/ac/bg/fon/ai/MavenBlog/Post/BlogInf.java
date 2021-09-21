@@ -1,8 +1,8 @@
 package rs.ac.bg.fon.ai.MavenBlog.Post;
 
+import rs.ac.bg.fon.ai.MavenBlog.Interface.BlogInterface;
 
-
-public class BlogInf  {
+public class BlogInf implements BlogInterface  {
 
 	String nazivBloga;
 	String naslovBloga;
@@ -44,10 +44,13 @@ public class BlogInf  {
 		this.followings = followings;
 	}
 	
+	
 	@Override
-	public String toString() {
-		return "INFORMACIJE O BLOGU\nnaziv bloga=" + nazivBloga + "\nnaslov bloga=" + naslovBloga + "\nopis bloga=" + opisBloga +"\nukupan broj objava="
-				+ ukupanBrojObjava +  "\nkoliko blogova prati=" + followings;
+	public void prikazi() {
+		
+		System.out.println("INFORMACIJE O BLOGU\nnaziv bloga=" + nazivBloga + "\nnaslov bloga=" + naslovBloga + "\nopis bloga=" + opisBloga +"\nukupan broj objava="
+				+ ukupanBrojObjava +  "\nkoliko blogova prati=" + followings);
+		
 	}
 
 	

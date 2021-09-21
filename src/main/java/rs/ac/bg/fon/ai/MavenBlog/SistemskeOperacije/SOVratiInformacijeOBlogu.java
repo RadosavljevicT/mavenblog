@@ -27,8 +27,7 @@ public class SOVratiInformacijeOBlogu {
 		binf.setNazivBloga(blog.getName());
 		binf.setOpisBloga(blog.getDescription());
 		binf.setFollowings(user.getFollowingCount());
-		 String s =binf.toString();
-		 System.out.println(s);
+		binf.prikazi();
 		
 		
 		

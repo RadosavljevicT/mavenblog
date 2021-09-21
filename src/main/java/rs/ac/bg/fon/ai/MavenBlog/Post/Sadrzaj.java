@@ -1,6 +1,8 @@
 package rs.ac.bg.fon.ai.MavenBlog.Post;
 
-public class Sadrzaj {
+import rs.ac.bg.fon.ai.MavenBlog.Interface.BlogInterface;
+
+public class Sadrzaj implements BlogInterface {
 	
 	String naslov;
 	String tekst;
@@ -24,6 +26,12 @@ public class Sadrzaj {
 		if (tekst == null)
 			throw new NullPointerException("Tekst ne sme biti null");
 		this.tekst = tekst;
+	}
+	@Override
+	public void prikazi() {
+		
+		System.out.println("Naslov: " +naslov+ "\n" + tekst);
+		
 	}
 	
 	
