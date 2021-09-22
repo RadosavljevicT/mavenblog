@@ -67,7 +67,7 @@ public class BlogInf implements BlogInterface  {
 	/**
 	 * Metoda koja postavlja naslov bloga na novu vrednost.
 	 * @param naslovBloga naslov bloga kao String.
-	 * throws java.lang.NullPointerException ako je naslov bloga null.
+	 * @throws java.lang.NullPointerException ako je naslov bloga null.
 	 */
 	public void setNaslovBloga(String naslovBloga) {
 		if (naslovBloga ==null)
