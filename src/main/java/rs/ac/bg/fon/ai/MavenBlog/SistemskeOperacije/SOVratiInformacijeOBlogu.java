@@ -20,7 +20,7 @@ public class SOVratiInformacijeOBlogu {
 	 * @return tekst tekst o uspesnosti.
 	 * @throws java.lang.NullPointerException ako je vrednost prvog tokena i/ili drugog tokena null.
 	 */
-	public static String vratiInformacijeOBlogu(String s1, String s2) throws Exception {
+	public static String vratiInformacijeOBlogu(String s1, String s2)  {
 		JumblrClient client = new JumblrClient(
 				  "QcfVaxZBTRF4Z0e03I8pTRAPV4OLmxnzWVtyZff2R5azVBhpKl",
 				  "TKDxnP0l1JgGP6eOKmeUGzSu6v8Mow5siUpoYyeoMdkJsZpSVG"

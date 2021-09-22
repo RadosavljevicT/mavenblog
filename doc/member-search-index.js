@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"rs.ac.bg.fon.ai.MavenBlog.SistemskeOperacije","c":"SOVratiPratioce","l":"SOVratiPratioce()","url":"%3Cinit%3E()"},{"p":"rs.ac.bg.fon.ai.MavenBlog.SistemskeOperacije","c":"SOVratiPratioce","l":"vratiPratioce(String, String)","url":"vratiPratioce(java.lang.String,java.lang.String)"}]

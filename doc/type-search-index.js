@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"rs.ac.bg.fon.ai.MavenBlog.SistemskeOperacije","l":"SOVratiPratioce"}]
