@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class SOVratiNaslov {
 	/**
 	 * Metoda koja vraca naslov objave. Naslov se ucitava preko tastature.
-	 * @return tekst tekst o uspesnosti kao String.
+	 * @return str naslov kao String.
 	 * @throws java.lang.NullPointerException ako je vrednost naslova null.
 	 */
 	public static String vratiNaslov() {
