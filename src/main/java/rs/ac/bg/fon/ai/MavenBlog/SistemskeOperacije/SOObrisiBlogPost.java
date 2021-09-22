@@ -1,8 +1,21 @@
 package rs.ac.bg.fon.ai.MavenBlog.SistemskeOperacije;
 
 import com.tumblr.jumblr.JumblrClient;
-
+/**
+ * Klasa koja predstavlja sistemsku operaciju za brisanje objave na blogu.
+ * @author Tamara Radosavljevic
+ *
+ */
 public class SOObrisiBlogPost {
+	
+	/**
+	 * Metoda koja brise objavu na blogu. Brisanje je omoguceno uz pomocu dva tokena i identifikacionog broja objave.
+	* @param s1 prvi token kao String
+	 * @param s2 drugi token kao String
+	 * @param postId identifikacioni broj objave koju zelimo da obrisemo
+	 * @return poruka o uspesnosti
+	 * @throws java.lang.NullPointerException ako je vrednost prvog tokena i/ili drugog tokena null.
+	 */
 
 public static String obrisiBlogPost(String s1, String s2, long postId) {
 	
