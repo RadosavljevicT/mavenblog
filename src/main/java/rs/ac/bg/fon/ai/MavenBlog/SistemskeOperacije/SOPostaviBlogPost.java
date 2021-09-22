@@ -5,10 +5,23 @@ import java.util.Scanner;
 import com.tumblr.jumblr.JumblrClient;
 import com.tumblr.jumblr.types.TextPost;
 
+/**
+ * Klasa koja predstavlja sistemsku operaciju za postavljanje objave na blog.
+ * @author Tamara Radosavljevic
+ *
+ */
 public class SOPostaviBlogPost {
 
 	
-	
+	/**
+	 * Metoda koja postavlja objavu na blog. To radi pomocu dva tokena.
+	 * @param s1 prvi token kao String
+	 * @param s2 drugi token kao String
+	 * @param naslov novi naslov objave kao String
+	 * @param tekst novi tekst objave kao String
+	 * @return poruka o uspesnosti
+	 * @throws java.lang.NullPointerException ako je vrednost prvog tokena i/ili drugog tokena i/ili naslova i/ili teksta null.
+	 */
 	
 public static String postaviBlogPost(String s1, String s2, String tekst, String naslov) throws Exception, InstantiationException {
 
