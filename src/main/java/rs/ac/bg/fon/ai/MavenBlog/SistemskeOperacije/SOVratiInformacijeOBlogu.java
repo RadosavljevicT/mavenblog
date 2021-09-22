@@ -5,10 +5,21 @@ import com.tumblr.jumblr.types.Blog;
 import com.tumblr.jumblr.types.User;
 
 import rs.ac.bg.fon.ai.MavenBlog.Post.BlogInf;
+/**
+ * Klasa koja predstavlja sistemsku operaciju za vracanje informacija o blogu.
+ * @author Tamara Radosavljevic
+ *
+ */
 
 public class SOVratiInformacijeOBlogu {
 
-	
+	/**
+	 * Metoda koja vraca informacije o blogu pomocu tokena.
+	 * @param s1 prvi token kao String.
+	 * @param s2 drugi token kao String.
+	 * @return tekst tekst o uspesnosti.
+	 * @throws java.lang.NullPointerException ako je vrednost prvog tokena i/ili drugog tokena null.
+	 */
 	public static String vratiInformacijeOBlogu(String s1, String s2) throws Exception {
 		JumblrClient client = new JumblrClient(
 				  "QcfVaxZBTRF4Z0e03I8pTRAPV4OLmxnzWVtyZff2R5azVBhpKl",
