@@ -11,10 +11,20 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import rs.ac.bg.fon.ai.MavenBlog.Post.Citati;
-
+/**
+ * Klasa koja predstavlja sistemsku operaciju za vracanje citata na osnovu slucajnog odabira.
+ * @author Tamara Radosavljevic
+ *
+ */
 public class SOVratiCitat {
 
-	
+	/**
+	 * Metoda koja vraca citat slucajnim odabirom ujedno i imenuje autora citata.
+	 * @return tekst tekst o uspesnoti kao String.
+	 * @throws Exception ako dodje do greske prilikom http odgovora.
+	 * @throws Throwable ako dodje do greske prilikom http odgovora.
+	 * @throws NullPointerException ukoliko su vrednosti dobijenog citata i/ili autora null.
+	 */
 	public static String vratiCitat() throws Exception, Throwable {
 		
 		Citati citat = new Citati();
