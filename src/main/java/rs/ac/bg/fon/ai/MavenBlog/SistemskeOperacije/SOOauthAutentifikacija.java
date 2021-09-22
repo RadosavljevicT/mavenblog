@@ -3,9 +3,17 @@ package rs.ac.bg.fon.ai.MavenBlog.SistemskeOperacije;
 import java.util.Scanner;
 
 import com.tumblr.jumblr.JumblrClient;
-
+/**
+ * Klasa koja predstavlja sistemsku aplikaciju za kreiranje Oauth autentifikacije.
+ * @author Tamara Radosavljevic
+ *
+ */
 public class SOOauthAutentifikacija {
 
+	/**
+	 * Metoda koja kreira Oauth autentifikaciju. Kreira se tako sto se ucitaju vrednosti dva tokena sa tastature i pozove odgovarajuca metoda koja postavlja vrednost tokena.
+	 * @throws java.lang.NullPointerException ako su vrednosti prvog tokena i/ili drugog tokena null.
+	 */
 	public static void oauthAutentifikacija() {
 		
 		
