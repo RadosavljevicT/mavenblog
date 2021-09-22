@@ -12,9 +12,20 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import rs.ac.bg.fon.ai.MavenBlog.Prevodilac.StraniJezik;
-
+/**
+ * Klasa koja predstavlja sistemsku operaciju za prevodjenje teksta.
+ * @author Tamara Radosavljevic
+ *
+ */
 public class SOPrevedi {
 
+	/**
+	 * Metoda koja prevodi tekst na drugi strani jezik.
+	 * @return tekst tekst o uspesnosti kao String.
+	 * @throws Exception ako dodje do greske prilikom http odgovora.
+	 * @throws InterruptedException ako dodje do greske prilikom http odgovora.
+	 * @throws java.langNullPointerException ukoliko su vrednosti izvornog jezika, stranog jezika, teksta ili dobijenog odgovora za prevodjenje null.
+	 */
 public static String prevedi() throws Exception, InterruptedException {
 		
 	StraniJezik straniJezik = new StraniJezik();
