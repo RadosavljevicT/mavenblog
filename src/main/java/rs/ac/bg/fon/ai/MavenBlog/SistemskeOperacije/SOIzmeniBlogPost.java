@@ -2,9 +2,23 @@ package rs.ac.bg.fon.ai.MavenBlog.SistemskeOperacije;
 
 import com.tumblr.jumblr.JumblrClient;
 import com.tumblr.jumblr.types.TextPost;
-
+/**
+ * Klasa koja predstavlja sistemsku operaciju za izmenu objave na blogu
+ * @author Tamara Radosavljevic
+ *
+ */
 public class SOIzmeniBlogPost {
 
+	/**
+	 * Metoda koja izmenjuje objavu na blogu. To radi pomocu dva tokena i identifikacionog broja objave koju zelimo da izmenimo.
+	 * @param s1 prvi token kao String
+	 * @param s2 drugi token kao String
+	 * @param naslov novi naslov objave kao String
+	 * @param tekst novi tekst objave kao String
+	 * @param postId identifikacioni broj objave koju zelimo da menjamo
+	 * @return poruka o uspesnosti
+	 * @throws java.lang.NullPointerException ako je vrednost prvog tokena i/ili drugog tokena i/ili naslova i/ili teksta null.
+	 */
 public static String izmeniBlogPost(String s1, String s2, String naslov, String tekst, long postId) {
 	
 	JumblrClient client = new JumblrClient(
