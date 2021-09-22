@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class SOVratiPostID {
 	
 	/**
-	 * Metoda koja vraca identifikacioni broj objave objave. Identifikacioni broj objave se ucitava preko tastature.
+	 * Metoda koja vraca identifikacioni broj objave. Identifikacioni broj objave se ucitava preko tastature.
 	 * @return num indentifikacioni broj objave kao long
 	 * @throws java.lang.RuntimeException ako je vrednost identifikacionog broja manja od nule.
 	 */

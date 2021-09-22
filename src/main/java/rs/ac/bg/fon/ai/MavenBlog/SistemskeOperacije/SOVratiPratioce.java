@@ -25,11 +25,21 @@ import com.tumblr.jumblr.types.User;
 
 import rs.ac.bg.fon.ai.MavenBlog.Post.Pratioci;
 
-
+/**
+ * Klasa koja predstavlja sistemsku operaciju za vracanje pratioca.
+ * @author Tamara Radosavljevic
+ *
+ */
 public class SOVratiPratioce {
 
 	 
-	 
+	 /**
+	  * Metoda koja vraca pratioce. Operacija se obavlja uz pomoc dva tokena.
+	  * @param s1 prvi token kao String.
+	  * @param s2 drugi token kao String.
+	  * @return tekst tekst o uspesnosti.
+	  * @throws java.lang.NullPointerException ako je vrednost prvog tokena i/ili drugog tokena null. 
+	  */
 	public static String vratiPratioce(String s1, String s2) {
 		
 		JumblrClient client = new JumblrClient(
