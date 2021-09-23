@@ -36,7 +36,7 @@ public static String izmeniBlogPost(String s1, String s2, String naslov, String 
 	post.setTitle(naslov);
 	post.save();
 	
-	System.out.println("Uspesno ste izmenili objavu!");
+	/*System.out.println("Uspesno ste izmenili objavu!");*/
 	
 	return "Uspesno ste izmenili objavu!";
 	

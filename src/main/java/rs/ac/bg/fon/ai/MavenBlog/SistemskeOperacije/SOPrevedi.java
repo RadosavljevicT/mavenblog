@@ -27,10 +27,10 @@ public class SOPrevedi {
 	 * @throws InterruptedException ako dodje do greske prilikom http odgovora.
 	 * @throws java.langNullPointerException ukoliko su vrednosti izvornog jezika, stranog jezika, teksta ili dobijenog odgovora za prevodjenje null.
 	 */
-public static String prevedi(String tekst) throws Exception, InterruptedException {
+public static String prevedi(String tekst, String ulazni_jezik, String izlazni_jezik) throws Exception, InterruptedException {
 		
 	StraniJezik straniJezik = new StraniJezik();
-	Scanner sc= new Scanner(System.in);
+	/*Scanner sc= new Scanner(System.in);
 	System.out.println("Unesite izvorni jezik od ponudjenih:\nfr - FRANCUSKI\nen - ENGLESKI\nes - SPANSKI\nde - NEMACKI\nit - ITALIJANSKI\nru - RUSKI :");
 	straniJezik.setIzvorniJezik(sc.nextLine());
 	Scanner sc1= new Scanner(System.in);
@@ -39,6 +39,8 @@ public static String prevedi(String tekst) throws Exception, InterruptedExceptio
 	Scanner sc2 = new Scanner(System.in);
 	/*System.out.println("Unesite tekst:");
 	straniJezik.setTekst(sc2.nextLine());*/
+	straniJezik.setIzvorniJezik(ulazni_jezik);
+	straniJezik.setStraniJezik(izlazni_jezik);
 	straniJezik.setTekst(tekst);
 	if (straniJezik.getIzvorniJezik() == null || straniJezik.getStraniJezik()== null || straniJezik.getTekst() ==null)
 		throw new NullPointerException("Izvorni jezik, strani jezik i tekst ne smeju biti null!");

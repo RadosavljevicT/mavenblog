@@ -30,7 +30,7 @@ public static void obrisiBlogPost(String s1, String s2, long postId) {
 	client.setToken(s1,s2);
 			
 			client.postDelete("student-engineer.tumblr.com",postId);
-			System.out.println("Uspesno ste obrisali objavu!");
+			/*System.out.println("Uspesno ste obrisali objavu!");*/
 			
 			
 

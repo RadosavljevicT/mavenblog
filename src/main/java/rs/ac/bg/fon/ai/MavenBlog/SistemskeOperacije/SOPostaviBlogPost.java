@@ -43,7 +43,7 @@ public static long postaviBlogPost(String s1, String s2, String tekst, String na
 	post.setTitle(naslov);
 	post.save();
 	
-	System.out.println("Uspesno ste objavili objavu!");
+	/*System.out.println("Uspesno ste objavili objavu!");*/
 		
 	return post.getId();
 	
