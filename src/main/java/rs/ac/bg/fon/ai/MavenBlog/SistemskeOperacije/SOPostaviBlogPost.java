@@ -19,11 +19,11 @@ public class SOPostaviBlogPost {
 	 * @param s2 drugi token kao String
 	 * @param naslov novi naslov objave kao String
 	 * @param tekst novi tekst objave kao String
-	 * @return poruka o uspesnosti
+	 * @return postId identifikacioni broj novog posta
 	 * @throws java.lang.NullPointerException ako je vrednost prvog tokena i/ili drugog tokena i/ili naslova i/ili teksta null.
 	 */
 	
-public static String postaviBlogPost(String s1, String s2, String tekst, String naslov) throws Exception, InstantiationException {
+public static long postaviBlogPost(String s1, String s2, String tekst, String naslov) throws Exception, InstantiationException {
 
 	JumblrClient client = new JumblrClient(
 			  "QcfVaxZBTRF4Z0e03I8pTRAPV4OLmxnzWVtyZff2R5azVBhpKl",
@@ -45,7 +45,7 @@ public static String postaviBlogPost(String s1, String s2, String tekst, String 
 	
 	System.out.println("Uspesno ste objavili objavu!");
 		
-	return "Uspesno ste objavili objavu!";
+	return post.getId();
 	
 }
 	

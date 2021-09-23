@@ -20,12 +20,12 @@ public class SOVratiCitat {
 
 	/**
 	 * Metoda koja vraca citat slucajnim odabirom ujedno i imenuje autora citata.
-	 * @return tekst tekst o uspesnoti kao String.
+	 * @return citat objekat klase Citati.
 	 * @throws Exception ako dodje do greske prilikom http odgovora.
 	 * @throws Throwable ako dodje do greske prilikom http odgovora.
 	 * @throws NullPointerException ukoliko su vrednosti dobijenog citata i/ili autora null.
 	 */
-	public static String vratiCitat() throws Exception, Throwable {
+	public static Citati vratiCitat() throws Exception, Throwable {
 		
 		Citati citat = new Citati();
 		HttpRequest request = HttpRequest.newBuilder()
@@ -53,6 +53,6 @@ public class SOVratiCitat {
 		
 		citat.prikazi();
 		
-		return "Uspesno ste dobili citat!";
+		return citat;
 	}
 }

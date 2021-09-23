@@ -21,12 +21,13 @@ public class SOPrevedi {
 
 	/**
 	 * Metoda koja prevodi tekst na drugi strani jezik.
-	 * @return tekst tekst o uspesnosti kao String.
+	 * @param tekst tekst koji zelimo da prevedemo kao String.
+	 * @return tekst prevedeni tekst kao String.
 	 * @throws Exception ako dodje do greske prilikom http odgovora.
 	 * @throws InterruptedException ako dodje do greske prilikom http odgovora.
 	 * @throws java.langNullPointerException ukoliko su vrednosti izvornog jezika, stranog jezika, teksta ili dobijenog odgovora za prevodjenje null.
 	 */
-public static String prevedi() throws Exception, InterruptedException {
+public static String prevedi(String tekst) throws Exception, InterruptedException {
 		
 	StraniJezik straniJezik = new StraniJezik();
 	Scanner sc= new Scanner(System.in);
@@ -36,14 +37,15 @@ public static String prevedi() throws Exception, InterruptedException {
 	System.out.println("Unesite jezik na koji zelite da prevedete od ponudjenih:\nfr - FRANCUSKI\nen - ENGLESKI\nes - SPANSKI\nde - NEMACKI\nit - ITALIJANSKI\nru - RUSKI :");
 	straniJezik.setStraniJezik(sc1.nextLine());
 	Scanner sc2 = new Scanner(System.in);
-	System.out.println("Unesite tekst:");
-	straniJezik.setTekst(sc2.nextLine());
+	/*System.out.println("Unesite tekst:");
+	straniJezik.setTekst(sc2.nextLine());*/
+	straniJezik.setTekst(tekst);
 	if (straniJezik.getIzvorniJezik() == null || straniJezik.getStraniJezik()== null || straniJezik.getTekst() ==null)
 		throw new NullPointerException("Izvorni jezik, strani jezik i tekst ne smeju biti null!");
 	
+	    
 	
-	
-		String tekst = straniJezik.toString();
+		String t = straniJezik.toString();
 	
 
 HttpRequest request = HttpRequest.newBuilder()
@@ -52,7 +54,7 @@ HttpRequest request = HttpRequest.newBuilder()
 		.header("accept-encoding", "application/gzip")
 		.header("x-rapidapi-host", "google-translate1.p.rapidapi.com")
 		.header("x-rapidapi-key", "17207c40ddmsh64e1bbf04da8840p134ddcjsn34b1d476e8e9")
-		.method("POST", HttpRequest.BodyPublishers.ofString(tekst)).build();
+		.method("POST", HttpRequest.BodyPublishers.ofString(t)).build();
  HttpClient client = HttpClient.newHttpClient();
 HttpResponse<String> response =client.send(request,HttpResponse.BodyHandlers.ofString());
 
@@ -72,7 +74,7 @@ if (translations == null)
 
 
 	
-              return "Uspesno ste preveli!";
+              return result;
 }
 
 }

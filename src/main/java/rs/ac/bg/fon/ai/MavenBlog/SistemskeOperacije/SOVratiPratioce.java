@@ -37,10 +37,10 @@ public class SOVratiPratioce {
 	  * Metoda koja vraca pratioce. Operacija se obavlja uz pomoc dva tokena.
 	  * @param s1 prvi token kao String.
 	  * @param s2 drugi token kao String.
-	  * @return tekst tekst o uspesnosti.
+	  * @return pratioci niz sa informacijama o pratiocima kao objekat klase Pratioci.
 	  * @throws java.lang.NullPointerException ako je vrednost prvog tokena i/ili drugog tokena null. 
 	  */
-	public static String vratiPratioce(String s1, String s2) {
+	public static Pratioci[] vratiPratioce(String s1, String s2) {
 		
 		JumblrClient client = new JumblrClient(
 				  "QcfVaxZBTRF4Z0e03I8pTRAPV4OLmxnzWVtyZff2R5azVBhpKl",
@@ -65,7 +65,7 @@ public class SOVratiPratioce {
 			
 			System.out.println(pratioci[i].getBrojPratioca()+"." + pratioci[i].getIme());}
 	
-return "Uspesno ste vratili pratioce!";
+return pratioci;
 
 	}
 }

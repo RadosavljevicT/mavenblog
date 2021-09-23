@@ -13,11 +13,10 @@ public class SOObrisiBlogPost {
 	* @param s1 prvi token kao String
 	 * @param s2 drugi token kao String
 	 * @param postId identifikacioni broj objave koju zelimo da obrisemo
-	 * @return poruka o uspesnosti
 	 * @throws java.lang.NullPointerException ako je vrednost prvog tokena i/ili drugog tokena null.
 	 */
 
-public static String obrisiBlogPost(String s1, String s2, long postId) {
+public static void obrisiBlogPost(String s1, String s2, long postId) {
 	
 	JumblrClient client = new JumblrClient(
 			  "QcfVaxZBTRF4Z0e03I8pTRAPV4OLmxnzWVtyZff2R5azVBhpKl",
@@ -31,11 +30,10 @@ public static String obrisiBlogPost(String s1, String s2, long postId) {
 	client.setToken(s1,s2);
 			
 			client.postDelete("student-engineer.tumblr.com",postId);
-		
 			System.out.println("Uspesno ste obrisali objavu!");
 			
-			return "Uspesno ste obrisali objavu!";
-	
+			
+
 	
 }
 }

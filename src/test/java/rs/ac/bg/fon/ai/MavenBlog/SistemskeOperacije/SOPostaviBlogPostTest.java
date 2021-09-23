@@ -6,6 +6,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.tumblr.jumblr.JumblrClient;
+import com.tumblr.jumblr.types.TextPost;
+
 class SOPostaviBlogPostTest {
 
 	@BeforeEach
@@ -18,8 +21,20 @@ class SOPostaviBlogPostTest {
 
 	@Test
 	void testPostaviBlogPost() throws InstantiationException, Exception {
-		String s = SOPostaviBlogPost.postaviBlogPost("Z1WRBy57YUtf1S6JsOGhERZn7lfPjquiFmXcRJVvYfDW4o9P6r", "XXyP03ryxjCHomA1Qi5cRzCDMnZyoPr4ZbxBdpWSloJTD7sWxG", "Danas je lep dan.", "Dan 1");
-		assertEquals("Uspesno ste objavili objavu!", s);
+		
+		long num = SOPostaviBlogPost.postaviBlogPost("Z1WRBy57YUtf1S6JsOGhERZn7lfPjquiFmXcRJVvYfDW4o9P6r", "XXyP03ryxjCHomA1Qi5cRzCDMnZyoPr4ZbxBdpWSloJTD7sWxG", "Danas je lep dan.", "Dan 1");
+		
+		
+		JumblrClient client = new JumblrClient(
+				  "QcfVaxZBTRF4Z0e03I8pTRAPV4OLmxnzWVtyZff2R5azVBhpKl",
+				  "TKDxnP0l1JgGP6eOKmeUGzSu6v8Mow5siUpoYyeoMdkJsZpSVG"
+				);
+		 client.setToken("Z1WRBy57YUtf1S6JsOGhERZn7lfPjquiFmXcRJVvYfDW4o9P6r", "XXyP03ryxjCHomA1Qi5cRzCDMnZyoPr4ZbxBdpWSloJTD7sWxG");
+		 TextPost post =  (TextPost)client.blogPost("student-engineer.tumblr.com", num);
+		 
+		
+		 assertEquals("Dan 1", post.getTitle());
+		 assertEquals("<p>Danas je lep dan.</p>", post.getBody());
 	}
 	
 	@Test

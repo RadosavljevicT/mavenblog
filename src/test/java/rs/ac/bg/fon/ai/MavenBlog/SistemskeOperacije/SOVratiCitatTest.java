@@ -6,6 +6,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import rs.ac.bg.fon.ai.MavenBlog.Post.Citati;
+
 class SOVratiCitatTest {
 
 	@BeforeEach
@@ -18,9 +20,12 @@ class SOVratiCitatTest {
 
 	@Test
 	void testVratiCitat() throws Exception, Throwable {
-		String s = SOVratiCitat.vratiCitat();
+		Citati c = SOVratiCitat.vratiCitat();
 		
-		assertEquals("Uspesno ste dobili citat!", s);
+		assertNotNull(c.getCitat());
+		assertNotNull(c.getImeAutora());
+		
+		
 	}
 	
 

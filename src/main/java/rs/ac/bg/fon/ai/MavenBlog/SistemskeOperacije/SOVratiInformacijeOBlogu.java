@@ -17,10 +17,10 @@ public class SOVratiInformacijeOBlogu {
 	 * Metoda koja vraca informacije o blogu pomocu tokena.
 	 * @param s1 prvi token kao String.
 	 * @param s2 drugi token kao String.
-	 * @return tekst tekst o uspesnosti.
+	 * @return binf objekat klase BlogInf.
 	 * @throws java.lang.NullPointerException ako je vrednost prvog tokena i/ili drugog tokena null.
 	 */
-	public static String vratiInformacijeOBlogu(String s1, String s2)  {
+	public static  BlogInf vratiInformacijeOBlogu(String s1, String s2)  {
 		JumblrClient client = new JumblrClient(
 				  "QcfVaxZBTRF4Z0e03I8pTRAPV4OLmxnzWVtyZff2R5azVBhpKl",
 				  "TKDxnP0l1JgGP6eOKmeUGzSu6v8Mow5siUpoYyeoMdkJsZpSVG"
@@ -45,7 +45,7 @@ public class SOVratiInformacijeOBlogu {
 		binf.prikazi();
 		
 		
-		return "Uspesno ste vratili informacije o blogu!";
+		return binf;
 	}
 	
 }
