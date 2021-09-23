@@ -18,7 +18,7 @@ public class SOVratiToken {
 		
 		
 		Scanner sc= new Scanner(System.in); 
-		System.out.print("Unesite token: ");
+		/*System.out.print("Unesite token: ");*/
 		String str= sc.nextLine(); 
 		if ( str==null)
 			throw new NullPointerException("Niste dobro uneli token!");

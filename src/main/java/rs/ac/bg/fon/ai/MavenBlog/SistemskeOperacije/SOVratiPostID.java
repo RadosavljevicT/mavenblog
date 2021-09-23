@@ -16,7 +16,7 @@ public class SOVratiPostID {
 	public static long vratiPostID(){
 		
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Unesite ID objave: ");
+		/*System.out.print("Unesite ID objave: ");*/
 		long num = sc.nextLong();
 		if (num <0)
 			throw new RuntimeException("Niste dobro uneli ID objave!");

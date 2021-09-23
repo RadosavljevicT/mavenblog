@@ -18,7 +18,7 @@ public class SOVratiTekst {
 		
 		
 		Scanner sc= new Scanner(System.in); 
-		System.out.print("Unesite tekst: ");
+		/*System.out.print("Unesite tekst: ");*/
 		String str= sc.nextLine();
 		if ( str==null)
 			throw new NullPointerException("Niste dobro uneli tekst!");
