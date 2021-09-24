@@ -8,6 +8,7 @@ import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
 
@@ -25,9 +26,11 @@ import com.google.gson.JsonObject;
 import com.tumblr.jumblr.JumblrClient;
 
 import rs.ac.bg.fon.ai.MavenBlog.Post.Citati;
+import rs.ac.bg.fon.ai.MavenBlog.Post.Pratioci;
 import rs.ac.bg.fon.ai.MavenBlog.Prevodilac.StraniJezik;
 import rs.ac.bg.fon.ai.MavenBlog.SistemskeOperacije.SOObrisiBlogPost;
 import rs.ac.bg.fon.ai.MavenBlog.SistemskeOperacije.SOPrevedi;
+import rs.ac.bg.fon.ai.MavenBlog.SistemskeOperacije.SOVratiPratioce;
 
 public class Main1 {
 	
@@ -35,10 +38,11 @@ public class Main1 {
 	
 	public static void main(String[] args) throws Exception  {
 		
-		SOObrisiBlogPost.obrisiBlogPost("Z1WRBy57YUtf1S6JsOGhERZn7lfPjquiFmXcRJVvYfDW4o9P6r", "XXyP03ryxjCHomA1Qi5cRzCDMnZyoPr4ZbxBdpWSloJTD7sWxG", 663133003145428992L);
-	              
+		List<String> p =SOVratiPratioce.vratiPratioce("Z1WRBy57YUtf1S6JsOGhERZn7lfPjquiFmXcRJVvYfDW4o9P6r", "XXyP03ryxjCHomA1Qi5cRzCDMnZyoPr4ZbxBdpWSloJTD7sWxG");
+	             
+		for (int i=0; i<p.size(); i++)
+			System.out.println(p.get(i));
 		
-
 	}
 		
 		

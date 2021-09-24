@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
@@ -37,10 +38,10 @@ public class SOVratiPratioce {
 	  * Metoda koja vraca pratioce. Operacija se obavlja uz pomoc dva tokena.
 	  * @param s1 prvi token kao String.
 	  * @param s2 drugi token kao String.
-	  * @return pratioci niz sa informacijama o pratiocima kao objekat klase Pratioci.
+	  * @return pratioci listu sa imenima pratioca tipa String.
 	  * @throws java.lang.NullPointerException ako je vrednost prvog tokena i/ili drugog tokena null. 
 	  */
-	public static Pratioci[] vratiPratioce(String s1, String s2) {
+	public static List<String> vratiPratioce(String s1, String s2) {
 		
 		JumblrClient client = new JumblrClient(
 				  "QcfVaxZBTRF4Z0e03I8pTRAPV4OLmxnzWVtyZff2R5azVBhpKl",
@@ -53,20 +54,19 @@ public class SOVratiPratioce {
 		client.setToken(s1,s2);
 		
 		List <User> users =client.blogFollowers("student-engineer");
-		Pratioci[] pratioci = new Pratioci[5000];
+		List <String>pratioci = new ArrayList<String>();
 		
 		for(int i =0; i< users.size(); i++) {
 			
+			Pratioci p = new Pratioci(i,users.get(i).getName());
+			pratioci.add(p.getIme());
 			
-			String ime = users.get(i).getName();
-			int broj = ++i;
-			pratioci[i] =new Pratioci(broj,ime);
+		
 			
 			
-			System.out.println(pratioci[i].getBrojPratioca()+"." + pratioci[i].getIme());}
-	
-return pratioci;
-
+			//System.out.println(pratioci.get(i));}
 	}
+		return pratioci;
+}
 }
 

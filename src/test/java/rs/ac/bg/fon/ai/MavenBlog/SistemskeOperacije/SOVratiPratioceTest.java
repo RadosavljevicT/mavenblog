@@ -2,6 +2,8 @@ package rs.ac.bg.fon.ai.MavenBlog.SistemskeOperacije;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.List;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,7 +22,7 @@ class SOVratiPratioceTest {
 
 	@Test
 	void testVratiPratioce() {
-		Pratioci[] p = SOVratiPratioce.vratiPratioce("Z1WRBy57YUtf1S6JsOGhERZn7lfPjquiFmXcRJVvYfDW4o9P6r", "XXyP03ryxjCHomA1Qi5cRzCDMnZyoPr4ZbxBdpWSloJTD7sWxG");
+	List<String> p = SOVratiPratioce.vratiPratioce("Z1WRBy57YUtf1S6JsOGhERZn7lfPjquiFmXcRJVvYfDW4o9P6r", "XXyP03ryxjCHomA1Qi5cRzCDMnZyoPr4ZbxBdpWSloJTD7sWxG");
 		assertNotNull(p);
 	}
 	

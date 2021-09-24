@@ -18,13 +18,13 @@ class SOPrevediTest {
 
 	@Test
 	void testPrevedi() throws InterruptedException, Exception {
-		String s = SOPrevedi.prevedi("Hello");
+		String s = SOPrevedi.prevedi("Hello","en","it");
 		assertNotEquals("Hello",s);
 	}
 	
 	@Test
 	void testPrevediNull() {
-		assertThrows(java.lang.NullPointerException.class, ()-> SOPrevedi.prevedi(null));
+		assertThrows(java.lang.NullPointerException.class, ()-> SOPrevedi.prevedi(null,null,null));
 		
 	}
 
