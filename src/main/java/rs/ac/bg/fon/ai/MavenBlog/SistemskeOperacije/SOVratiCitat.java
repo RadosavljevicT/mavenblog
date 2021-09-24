@@ -51,7 +51,7 @@ public class SOVratiCitat {
 		
 		citat.setImeAutora(c.get("author").getAsString());
 		
-		citat.prikazi();
+		//citat.prikazi();
 		
 		return citat;
 	}

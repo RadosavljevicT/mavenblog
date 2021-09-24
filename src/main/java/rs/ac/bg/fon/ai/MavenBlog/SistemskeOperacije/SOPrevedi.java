@@ -72,7 +72,7 @@ if (translations == null)
 	throw new NullPointerException("Neuspesan zahtev za prevodjenje!");
 
 	    String result = translations.get("translatedText").toString();
-	    System.out.println(result);
+	 //   System.out.println(result);
 
 
 	

@@ -33,8 +33,8 @@ public static long postaviBlogPost(String s1, String s2, String tekst, String na
 	if (s1 ==null || s2 == null || tekst == null || naslov == null)
 		 throw new NullPointerException ("Tokeni ne smeju biti null!");
 			
-	System.out.println(s1);
-	System.out.println(s2);
+	//System.out.println(s1);
+	//System.out.println(s2);
 	client.setToken(s1,s2);
 
 
